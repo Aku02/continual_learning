@@ -34,12 +34,11 @@ def get_method_sl() -> Method[PassiveSetting]:
     #     hparams=ExampleTaskInferenceMethod.HParams(max_epochs_per_task=1)
     # )
 
-    # from sequoia.methods.ewc_method import EwcMethod, EwcModel
-    # return EwcMethod(hparams=EwcModel.HParams())
+    from sequoia.methods.ewc_method import EwcMethod, EwcModel
+    return EwcMethod(hparams=EwcModel.HParams())
 
-    from sequoia.methods.experience_replay import ExperienceReplayMethod
-    return ExperienceReplayMethod(buffer_capacity=1000)
-
+    # from sequoia.methods.experience_replay import ExperienceReplayMethod
+    # return ExperienceReplayMethod(buffer_capacity=200, max_epochs_per_task = 1)
 
 def get_method_rl() -> Method[ActiveSetting]:
     """Returns the Method to be be used for the reinforcement learning track.
